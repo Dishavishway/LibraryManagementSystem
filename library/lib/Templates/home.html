@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block title %}
+Online Testing System - Home Page
+{% endblock title %}
+
+{% block top %}
+<a href = "{% url 'lib:Home' %}">Home</a>
+
+{% endblock top %}
+
+{% block content %}
+<h2>Welcome {{request.session.name}}, to your Home Page.....!!</h2>
+
+<div class = "button-link">
+    <a href = "{% url 'lib:addForm' %}">
+        Add Book.
+    </a>
+</div><br>
+
+<div class = "button-link">
+    <a href = "{% url 'lib:delete_data' %}">
+        Delete Book.
+    </a>
+</div><br>
+
+<div class = "button-link">
+    <a href = "{% url 'lib:show_data' %}">
+        Show Data
+    </a>
+</div><br>
+
+{% endblock content %}

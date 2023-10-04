@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block title %}
+Online Testing System Registration Form
+{% endblock title %}
+
+{% block top %}
+<a href = "{% url 'lib:Home' %}">Home</a><br><br>
+{% endblock top %}
+
+{% block content %}
+<div class="all-form">
+    <form action="{% url 'lib:AddBookDetails' %}"   method="post">
+        {% csrf_token %}
+
+        <label for="book_id">Book ID</label>
+        <input type="text" name="book_id">
+        <br>
+
+        <label for="book_name">Book Name</label>
+        <input type="text" name="book_name">
+        <br>
+
+        <label for="author">Author of Book</label>
+        <input type="text" name="author">
+        <br>
+
+        <label for="price">Price</label>
+        <input type="text" name="price">
+        <br>
+
+        <input type="submit" value="Add">
+        <input type="reset" value="clear">
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+
+{% block title %}delete
+{% endblock title %}
+
+{% block top %}
+<a href = "{% url 'lib:Home' %}">Home</a>
+<a href = "{% url 'lib:login' %}">Login</a>
+{% endblock top %}
+
+{% block content %}
+    <h2>Click on Book ID to delete</h2>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Book ID</th>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Date</th>
+            <tr>-</tr>
+        </tr>
+        {% for b in books %}
+        <tr>
+            <th>{{b.username}}</th>
+            <th>{{b.book_name}}</th>
+            <th>{{b.author}}</th>
+            <th>{{b.price}}</th>
+            <th>{{b.date}}</th>
+            <th>{{b.book_id}}<a href="{% url 'lib:delete_book' b.book_id %}">delete</a></th>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}
+

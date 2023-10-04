@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+
+{% block title %}
+Online Testing System Registration Form
+{% endblock title %}
+
+{% block top %}
+<a href = "{% url 'lib:login' %}">Login</a><br><br>
+{% endblock top %}
+
+{% block content %}
+<div class="all-form">
+    <form action="{% url 'lib:StoreDetails' %}"   method="post">
+        {% csrf_token %}
+
+        <label for="name">Name</label>
+        <input type="text" name="name">
+        <br>
+
+        <label for="username">Username</label>
+        <input type="text" name="username">
+        <br>
+
+        <label for="enroll">Enrollment Number</label>
+        <input type="text" name="enroll">
+        <br>
+
+        <label for="phone number">Phone Number</label>
+        <input type="text" name="phone number">
+        <br>
+
+        <label for="email">Email</label>
+        <input type="text" name="email">
+        <br>
+
+        <label for="password">Password</label>
+        <input type="password" name="password">
+        <br>
+
+        
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="clear">
+    </form>
+</div>
+{% endblock content %}
